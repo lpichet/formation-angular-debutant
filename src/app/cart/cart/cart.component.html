@@ -1,0 +1,51 @@
+<div>
+    <div class="flex flex-wrap max-w-7xl mx-auto my-4">
+        <div class="flex flex-col flex-1">
+            @for (cartItem of cart$ | async; track cartItem.product.id) {
+            <div class="w-full sm:w-2/2 md:w-2/2 xl:w-5/5 p-4 my-auto">
+                <div class="styles_bgCart">
+                    <div class="flex flex-row h-48"><img class="w-32 my-auto p-4 object-contain"
+                            [src]="cartItem.product.image" [alt]="cartItem.product.title">
+                        <div class="flex flex-col ml-2 mt-2"><a href="/product/2">
+                                <h2
+                                    class="text-sm title-font text-zinc-900 tracking-widest hover:text-blue-600 mt-2">
+                                    {{cartItem.product.brand}}</h2>
+                                <p class="font-extralight">{{cartItem.product.title}}</p>
+                            </a>
+                            <p class="mt-auto mb-4 font-extralight text-xl">
+                                @if (cartItem.quantity > 1) {
+                                    {{cartItem.product.price}} * {{cartItem.quantity}} : {{cartItem.product.price * cartItem.quantity}}
+                                } @else {
+                                    {{cartItem.product.price}}
+                                }
+                                    </p>
+                        </div>
+                        <div class="flex flex-row ml-auto" (click)="removeFromCart(cartItem.product)"><button
+                                class="w-5 h-5 ml-auto m-4 hover:text-red-500"><svg
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
+                                    </path>
+                                </svg></button></div>
+                    </div>
+                </div>
+            </div>
+            }
+        
+        </div>
+        <div class="w-full h-full sm:w-2/2 md:w-2/2 xl:w-1/5 p-4">
+            <div class="styles_bgCart">
+                <div class="flex flex-col p-4"><span class="text-xl mb-4 font-semibold">Order
+                        Summary</span><span class="text-sm my-2 font-extralight flex">Subtotal <span
+                            class="ml-auto font-normal">{{total$ | async | currency}}</span></span><span
+                        class="text-sm my-2 font-extralight flex">Shipping Estimate <span
+                            class="ml-auto font-normal">$ 5</span></span><span
+                        class="text-sm my-2 font-extralight flex">Tax Estimate <span
+                            class="ml-auto font-normal">$ 5</span></span><span
+                        class="text-md my-2 font-normal flex">Order Total <span class="ml-auto">
+                            {{((total$ | async) ?? 0) + 10}}</span></span></div>
+            </div>
+        </div>
+    </div>
+</div>

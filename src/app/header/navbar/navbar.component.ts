@@ -1,9 +1,10 @@
 import { Component, inject, Input } from '@angular/core';
 import { CartService } from '../../products/services/cart.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'ngshop-navbar',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })

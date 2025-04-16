@@ -12,7 +12,7 @@
             "category": "men's clothing",
             "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg"
           },
-          "quantity": 5
+          "quantity": 2
         },
         {
           "product": {
@@ -28,7 +28,7 @@
               "count": 500
             }
           },
-          "quantity": 2
+          "quantity": 1
         },
         {
           "product": {
@@ -45,6 +45,22 @@
             }
           },
           "quantity": 1
+        },
+        {
+          "product": {
+            "id": "9",
+            "brand": "WD",
+            "title": "2TB Elements Portable External Hard Drive - USB 3.0 ",
+            "price": 64,
+            "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
+            "category": "electronics",
+            "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
+            "rating": {
+              "rate": 3.3,
+              "count": 203
+            }
+          },
+          "quantity": 1
         }
       ],
       "id": "1"
@@ -52,7 +68,7 @@
   ],
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "brand": "Brand",
       "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
       "price": 109.95,
@@ -65,7 +81,7 @@
       }
     },
     {
-      "id": 2,
+      "id": "2",
       "brand": "Mens",
       "title": "Casual Premium Slim Fit T-Shirts ",
       "price": 22.3,
@@ -74,7 +90,7 @@
       "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
     },
     {
-      "id": 3,
+      "id": "3",
       "brand": "Mens",
       "title": "Cotton Jacket",
       "price": 55.99,
@@ -87,7 +103,7 @@
       }
     },
     {
-      "id": 4,
+      "id": "4",
       "brand": "Mens",
       "title": "Casual Slim Fit",
       "price": 15.99,
@@ -96,7 +112,7 @@
       "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg"
     },
     {
-      "id": 5,
+      "id": "5",
       "brand": "John Hardy",
       "title": "Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
       "price": 695,
@@ -109,7 +125,7 @@
       }
     },
     {
-      "id": 6,
+      "id": "6",
       "brand": "Solid",
       "title": "Gold Petite Micropave ",
       "price": 168,
@@ -122,7 +138,7 @@
       }
     },
     {
-      "id": 7,
+      "id": "7",
       "brand": "Disney",
       "title": "White Gold Plated Princess",
       "price": 9.99,
@@ -135,7 +151,7 @@
       }
     },
     {
-      "id": 8,
+      "id": "8",
       "brand": "Disney",
       "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
       "price": 10.99,
@@ -148,7 +164,7 @@
       }
     },
     {
-      "id": 9,
+      "id": "9",
       "brand": "WD",
       "title": "2TB Elements Portable External Hard Drive - USB 3.0 ",
       "price": 64,
@@ -161,7 +177,7 @@
       }
     },
     {
-      "id": 10,
+      "id": "10",
       "brand": "SanDisk",
       "title": " SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
       "price": 109,
@@ -174,7 +190,7 @@
       }
     },
     {
-      "id": 11,
+      "id": "11",
       "brand": "Silicon Power",
       "title": " 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
       "price": 109,
@@ -187,7 +203,7 @@
       }
     },
     {
-      "id": 12,
+      "id": "12",
       "brand": "WD",
       "title": "4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
       "price": 114,
@@ -200,7 +216,7 @@
       }
     },
     {
-      "id": 13,
+      "id": "13",
       "brand": "Acer",
       "title": "SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
       "price": 599,
@@ -213,7 +229,7 @@
       }
     },
     {
-      "id": 14,
+      "id": "14",
       "brand": "Samsung",
       "title": "49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
       "price": 999.99,
@@ -226,7 +242,7 @@
       }
     },
     {
-      "id": 15,
+      "id": "15",
       "brand": "BIYLACLESEN",
       "title": "Women's 3-in-1 Snowboard Jacket Winter Coats",
       "price": 56.99,
@@ -239,7 +255,7 @@
       }
     },
     {
-      "id": 16,
+      "id": "16",
       "brand": "Lock and Love",
       "title": "Women's Removable Hooded Faux Leather Moto Biker Jacket",
       "price": 29.95,
@@ -252,7 +268,7 @@
       }
     },
     {
-      "id": 17,
+      "id": "17",
       "brand": "Rain Jacket",
       "title": "Women Windbreaker Striped Climbing Raincoats",
       "price": 39.99,
@@ -265,7 +281,7 @@
       }
     },
     {
-      "id": 18,
+      "id": "18",
       "brand": "MBJ",
       "title": "Women's Solid Short Sleeve Boat Neck V ",
       "price": 9.85,
@@ -278,7 +294,7 @@
       }
     },
     {
-      "id": 19,
+      "id": "19",
       "brand": "Opna",
       "title": "Women's Short Sleeve Moisture",
       "price": 7.95,
@@ -291,7 +307,7 @@
       }
     },
     {
-      "id": 20,
+      "id": "20",
       "brand": "DANVOUY",
       "title": "Womens T Shirt Casual Cotton Short",
       "price": 12.99,

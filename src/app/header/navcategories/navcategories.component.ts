@@ -1,18 +1,19 @@
-import { CommonModule, NgClass } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { AsyncPipe, CommonModule, NgClass } from '@angular/common';
+import { Component, inject, Input } from '@angular/core';
 import { Category } from '../../products/product';
+import { ProductService } from '../../products/services/product.service';
 
 @Component({
   selector: 'ngshop-navcategories',
-  imports: [NgClass],
+  imports: [NgClass, AsyncPipe],
   templateUrl: './navcategories.component.html',
   styleUrl: './navcategories.component.css'
 })
 export class NavcategoriesComponent {
-  @Input() onFilterBy!: (category: Category) => void;
-  @Input() category!: Category;
+  private productService = inject(ProductService);
+  public category$ = this.productService.category$;
 
   handleClick(category: Category) {
-    this.onFilterBy(category);
+    this.productService.filterByCategory(category);
   }
 }

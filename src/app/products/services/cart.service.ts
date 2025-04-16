@@ -11,6 +11,8 @@ import { environment } from '../../../environments/environment';
 export class CartService {
   cart: CartItem[] = [];
   cartLength$ = new BehaviorSubject<number>(0);
+  cartTotalPrice$ = new BehaviorSubject<number>(0);
+  cart$ = new BehaviorSubject<CartItem[]>(this.cart);
   private cartLengthCallback: ((length: number) => void) | null = null;
   private http = inject(HttpClient);
   
@@ -42,6 +44,22 @@ export class CartService {
     });
   }
 
+  removeFromCart(product: Product) {
+    const existingProduct = this.cart.find(item => item.product.id === product.id);
+    if (existingProduct) {
+      if (existingProduct.quantity > 1) {
+        existingProduct.quantity -= 1;
+      } else {
+        this.cart = this.cart.filter(item => item.product.id !== product.id);
+      }
+    }
+    const apiUrl = `${environment.apiUrl}/carts/1`;
+    this.http.put(apiUrl, {products: this.cart}).subscribe({
+      next: (response) => this.notifyCartLengthChange(),
+      error: (error) => console.error('Failed to update cart on the server:', error)
+    });
+  }
+
   public getCartLength() {
     return this.cart.reduce((acc, item) => acc + item.quantity, 0);
   }
@@ -56,7 +74,8 @@ export class CartService {
   }
 
   private notifyCartLengthChange(): void {
-    console.log(this.getTotalPrice())
+    this.cartTotalPrice$.next(this.getTotalPrice())
+    this.cart$.next(this.cart);
     this.cartLength$.next(this.getCartLength());
     if (this.cartLengthCallback) {
       this.cartLengthCallback(this.getCartLength());

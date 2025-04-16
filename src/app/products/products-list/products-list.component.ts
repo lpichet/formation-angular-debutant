@@ -1,7 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { ProductCardComponent } from './product-card/product-card.component';``
 import productsData from '../products.json';
-import { Product } from '../product';
+import { Category, Product } from '../product';
+import { BehaviorSubject, map, switchMap } from 'rxjs';
+import { ProductService } from '../services/product.service';
+import { AsyncPipe } from '@angular/common';
 
 // type ProductType = {
 //   id: number;
@@ -45,14 +48,17 @@ import { Product } from '../product';
 
 @Component({
   selector: 'ngshop-products-list',
-  imports: [ProductCardComponent],
+  imports: [ProductCardComponent, AsyncPipe],
   templateUrl: './products-list.component.html',
   styleUrl: './products-list.component.css'
 })
 export class ProductsListComponent {
-  @Input() products!: Product[] | null;
   private favorites: Set<number> = new Set();
 
+private productService = inject(ProductService);
+products$ = this.productService.products$;
+  
+  
   constructor() {
     this.loadFavorites();
   }
