@@ -3,9 +3,7 @@
         @for (product of products$ | async; track product.id) {
             <ngshop-product-card 
             class="styles_card" 
-            [product]="product" 
-            [isFavorite]="isFavorite(product.id)"
-            (toggleFavorite)="toggleFavorite(product.id)">
+            [product]="product">
         </ngshop-product-card>
         } @empty {
             <div class="styles_emptyState">

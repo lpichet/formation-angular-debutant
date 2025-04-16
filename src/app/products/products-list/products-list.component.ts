@@ -53,35 +53,6 @@ import { AsyncPipe } from '@angular/common';
   styleUrl: './products-list.component.css'
 })
 export class ProductsListComponent {
-  private favorites: Set<number> = new Set();
-
-private productService = inject(ProductService);
-products$ = this.productService.products$;
-  
-  
-  constructor() {
-    this.loadFavorites();
-  }
-
-  private loadFavorites(): void {
-    const storedFavorites: number[] = JSON.parse(localStorage.getItem('favorites') || '[]');
-    this.favorites = new Set(storedFavorites);
-  }
-
-  private saveFavorites(): void {
-    localStorage.setItem('favorites', JSON.stringify(Array.from(this.favorites)));
-  }
-
-  public toggleFavorite(productId: number): void {
-    if (this.favorites.has(productId)) {
-      this.favorites.delete(productId);
-    } else {
-      this.favorites.add(productId);
-    }
-    this.saveFavorites();
-  }
-
-  public isFavorite(productId: number): boolean {
-    return this.favorites.has(productId);
-  }
+  private productService = inject(ProductService);
+  products$ = this.productService.products$;
 }
