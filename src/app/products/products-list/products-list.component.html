@@ -1,0 +1,17 @@
+<div class="container mx-auto">
+    <div class="styles_cardGroup">
+        @for (product of products; track product.id) {
+            <ngshop-product-card 
+            class="styles_card" 
+            [product]="product" 
+            [isFavorite]="isFavorite(product.id)"
+            (toggleFavorite)="toggleFavorite(product.id)">
+        </ngshop-product-card>
+        } @empty {
+            <div class="styles_emptyState">
+                <h1 class="styles_emptyStateText">No products found</h1>
+                <p class="styles_emptyStateSubText">Try a different search</p>
+            </div>
+        }
+    </div>
+</div>

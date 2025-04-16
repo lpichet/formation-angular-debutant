@@ -1,0 +1,17 @@
+<nav class="styles_categoryNav">
+    <div><a class="styles_categoryLink" [class.styles_categoryLinkActive]="category == 'all'" (click)="handleClick('all')">
+            <h1 class="truncate">All</h1>
+        </a></div>
+    <div><a class="styles_categoryLink" [class.styles_categoryLinkActive]="category == 'electronics'" (click)="handleClick('electronics')">
+            <h1 class="truncate">Electronics</h1>
+        </a></div>
+    <div><a class="styles_categoryLink" [ngClass]="{styles_categoryLinkActive: category == 'jewelery'}" (click)="handleClick('jewelery')">
+            <h1 class="truncate">Jewelery</h1>
+        </a></div>
+    <div><a class="styles_categoryLink" (click)="handleClick('men\'s clothing')">
+            <h1 class="truncate">Men's Clothing</h1>
+        </a></div>
+    <div><a class="styles_categoryLink" (click)="handleClick('women\'s clothing')">
+            <h1 class="truncate">Women's Clothing</h1>
+        </a></div>
+</nav>
